@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Playground</title>
+</head>
+<body>
+    <button class="addNewBook">Add New Book</button>
+    <div class="formModal" id="bookEntryModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <h3 class="add-book-heading">Add a New Book</h3>
+                <form >
+                    <!-- <label for="book-name">Book Name:</label><br> -->
+                    <input type="text" name="book-name" id="book-name" placeholder="Book Title"><br>
+                    <!-- <label for="book-author">Author:</label><br> -->
+                    <input type="text" name="book-author" id="book-author" placeholder="Author"><br>
+                    <!-- <label for="page-number">Number of Pages:</label><br> -->
+                    <input type="text" name="page-number" id="page-number" placeholder="Number of Pages"><br>
+                    <div class="read-options">
+                    <label for="read">Read Book</label>
+                    <input type="radio" name="book-read" id="book-read-yes" value="yes">
+                    <label for="read">Not Read</label>
+                    <input type="radio" name="book-read" id="book-read-no" value="no">
+
+                    </div>
+                    
+                    <input type="button" value="Enter Book" id="submit-btn">
+                </form>
+            </div>
+        </div>
+    </div>
+
+   
+
+    <div class="display-books-container">
+        <!-- <div class="book-card" data-book="">
+            <p class="book-title">Zombie</p>
+            <p class="book-author">Mouse Man</p>
+            <p class="book-pages">568</p>
+            <p class="book-has-read">Yes</p>
+            <button class="toggle-read">Toggle Read</button>
+        </div>
+        <div class="book-card" data-book="">
+            <p class="book-title">Catcher</p>
+            <p class="book-author">Cat Man</p>
+            <p class="book-pages">789</p>
+            <p class="book-has-read">No</p>
+            <button class="toggle-read">Toggle Read</button>
+        </div>
+        <div class="book-card" data-book="">
+            <p class="book-title">FlyWheel</p>
+            <p class="book-author">Bird Man</p>
+            <p class="book-pages">210</p>
+            <p class="book-has-read">No</p>
+            <button class="toggle-read">Toggle Read</button>
+        </div> -->
+    </div>
+    
+</body>
+</html>
