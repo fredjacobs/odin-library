@@ -50,7 +50,7 @@ function Book(title, author,
         bookList.insertAdjacentHTML("afterbegin", html);
 
         
-        
+        console.log(myLibrary);
 
         
     }
@@ -79,13 +79,22 @@ function Book(title, author,
         
     }
 
-    function deleteBook(e){
-        console.log(e.target);
+    function deleteBook(book, removeElement){
+        myLibrary.find((el, i) => {if(el.title === book ) myLibrary.pop(el)})
+        removeElement.remove();
+        
     }
 
-    
+    function toggleRead(e){
+        myLibrary.find((el, i) => {if(el.read === 'yes'){
+            el.read = 'no'
+            e.target.previousElementSibling.textContent = 'no'
+        } else {
+            el.read = 'yes'
+            e.target.previousElementSibling.textContent = 'yes'
+        }})
+    }
 
-    
     submitBtn.addEventListener('click', getBookInfo);
     
     bookList.addEventListener('click', function(e){
@@ -93,35 +102,14 @@ function Book(title, author,
         const book = targetEl.dataset.book;
 
         if(e.target.classList.contains('delete-book')){
-            myLibrary.find((el, i) => {if(el.title === book ) myLibrary.pop(el)})
-            targetEl.remove();
+            deleteBook(book, targetEl);
         }else if((e.target.classList.contains('toggle-read'))){
-            
-            console.log(`Must Toggle`);
-            
-            myLibrary.find((el, i) => {if(el.read === 'yes'){
-                el.read = 'no'
-                e.target.previousElementSibling.textContent = 'no'
-            } else {
-                el.read = 'yes'
-                e.target.previousElementSibling.textContent = 'yes'
-            }})
+            toggleRead(e);
             
         }
-        
-        
-        console.log(e.target);
+       
     })
     
-    console.log(myLibrary);
-
-
-
-    
-
-    /* const book = document.getElementById('book-name');
-    book.dataset.bookName = 'BookInPlace'; */
-
 newBtn.onclick = function(){
     modal.style.display = 'block';
 }
